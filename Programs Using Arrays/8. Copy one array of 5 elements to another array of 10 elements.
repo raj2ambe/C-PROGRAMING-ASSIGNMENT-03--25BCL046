@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int source[5], target[10];
+
+    // Input for source array
+    printf("Enter 5 elements for source array:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("source[%d]: ", i);
+        scanf("%d", &source[i]);
+    }
+
+    // Initialize target array to 0
+    for(int i = 0; i < 10; i++) {
+        target[i] = 0;
+    }
+
+    // Copy with skipping one position
+    for(int i = 0; i < 5; i++) {
+        target[i * 2] = source[i];  // Copy to even indices: 0, 2, 4, 6, 8
+    }
+
+    // Display target array
+    printf("\nTarget array after copying with skipped positions:\n");
+    for(int i = 0; i < 10; i++) {
+        printf("target[%d]: %d\n", i, target[i]);
+    }
+
+    return 0;
+}
