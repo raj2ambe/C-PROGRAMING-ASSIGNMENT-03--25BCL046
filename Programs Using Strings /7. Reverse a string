@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100] = "Hello RAJ!";
+    int i, j;
+    char temp;
+
+    // Find length of string
+    int len = strlen(str);
+
+    // Reverse the string using two-pointer approach
+    for (i = 0, j = len - 1; i < j; i++, j--) {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+
+    printf("Reversed string: %s\n", str);
+
+    return 0;
+}
