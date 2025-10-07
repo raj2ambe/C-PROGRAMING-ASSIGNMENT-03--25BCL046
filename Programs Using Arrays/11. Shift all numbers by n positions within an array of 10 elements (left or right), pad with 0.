@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+void shiftArray(int arr[], int n, char direction) {
+    int result[10] = {0}; // initialize all elements to 0
+
+    for (int i = 0; i < 10; i++) {
+        if (direction == 'L') {
+            if (i + n < 10)
+                result[i] = arr[i + n];
+        } else if (direction == 'R') {
+            if (i - n >= 0)
+                result[i] = arr[i - n];
+        }
+    }
+
+    // Print shifted array
+    printf("Shifted Array: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", result[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int n;
+    char direction;
+
+    printf("Original Array: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    printf("Enter number of positions to shift (n): ");
+    scanf("%d", &n);
+    printf("Enter direction (L for left, R for right): ");
+    scanf(" %c", &direction);
+
+    shiftArray(arr, n, direction);
+
+    return 0;
+}
