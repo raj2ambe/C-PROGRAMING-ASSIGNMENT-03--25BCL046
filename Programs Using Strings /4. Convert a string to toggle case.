@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    char str[100] = "Hello RAJ!";
+    int i = 0;
+
+    // Toggle case of each character
+    while (str[i] != '\0') {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32; // Convert to lowercase
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32; // Convert to uppercase
+        }
+        i++;
+    }
+
+    printf("Toggle case string: %s\n", str);
+
+    return 0;
+}
