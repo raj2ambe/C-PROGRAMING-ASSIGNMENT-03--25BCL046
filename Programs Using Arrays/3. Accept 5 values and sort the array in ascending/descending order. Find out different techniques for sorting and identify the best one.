@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+void sortAscending(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        for(int j = i+1; j < n; j++) {
+            if(arr[i] > arr[j]) {
+                // Swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+void sortDescending(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        for(int j = i+1; j < n; j++) {
+            if(arr[i] < arr[j]) {
+                // Swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int values[5];
+
+    // Accepting 5 values
+    printf("Enter 5 integer values:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("Value %d: ", i + 1);
+        scanf("%d", &values[i]);
+    }
+
+    // Sorting in ascending order
+    sortAscending(values, 5);
+    printf("\nAscending order:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", values[i]);
+    }
+
+    // Sorting in descending order
+    sortDescending(values, 5);
+    printf("\n\nDescending order:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", values[i]);
+    }
+
+    return 0;
+}
