@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100] = {10, 20, 30, 40, 50}; // Initial array
+    int n = 5; // Size of array
+    int value = 30; // Value to search
+    int found = 0;
+
+    // Search for the value
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == value) {
+            printf("Value %d found at position %d.\n", value, i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Value %d not found in the array.\n", value);
+    }
+
+    return 0;
+}
