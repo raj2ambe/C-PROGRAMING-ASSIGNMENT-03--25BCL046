@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5], reversed[5], n;
+
+    printf("Enter number of elements (max 5): ");
+    scanf("%d", &n);
+
+    if (n > 5 || n < 1) {
+        printf("Invalid input. Please enter between 1 and 5 elements.\n");
+        return 1;
+    }
+
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Reverse logic
+    for (int i = 0; i < n; i++) {
+        reversed[i] = arr[n - 1 - i];
+    }
+
+    printf("Reversed array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", reversed[i]);
+    }
+
+    return 0;
+}
