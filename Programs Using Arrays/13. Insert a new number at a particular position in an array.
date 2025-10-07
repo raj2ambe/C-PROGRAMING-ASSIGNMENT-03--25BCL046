@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100] = {10, 20, 30, 40, 50}; // Initial array
+    int n = 5; // Current size of array
+    int pos = 2; // Position to insert (0-based index)
+    int newNum = 25; // Number to insert
+
+    // Shift elements to the right from the end to the position
+    for (int i = n; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    // Insert new number at the specified position
+    arr[pos] = newNum;
+    n++; // Update array size
+
+    // Print updated array
+    printf("Updated array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
